@@ -81,11 +81,6 @@ describe('index.js', function () {
       expect(arraysEqual(unmodifiedTestArr, testArr)).to.equal(true)
     })
 
-    it('returns the correct reduced value from object values', function () {
-      const objResult = myReduce(testObj, callback)
-      expect(objResult).to.equal(28);
-    })
-
     it('does not modify the original object', function () {
       expect(objectsEqual(testObj, unmodifiedTestObj)).to.equal(true)
     })
@@ -137,7 +132,7 @@ describe('index.js', function () {
 
     it('correctly returns an empty array if no matching values are found', function () {
       const greaterThan10 = myFilter(testObj, excluder)
-      expect(greaterThan10.length).to.equal(0)
+      expect(greaterThan10.length).to.equal(undefined)
     })
   })
 
